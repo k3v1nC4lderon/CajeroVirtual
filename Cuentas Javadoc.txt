@@ -1,0 +1,129 @@
+
+
+```java
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cajero;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Esta clase representa las cuentas de usuario en el sistema del cajero automático.
+ * Permite crear, leer, actualizar y eliminar cuentas.
+ * También proporciona funcionalidades como iniciar sesión, verificar saldos, realizar depósitos y retiros, y transferir fondos.
+ */
+public class Cuentas {
+
+    String nombre, Ap, Am, tipoCuenta, usuario;
+    int ci, dia, mes, anio, pin;
+    final String rutaArchivo = "usuario.txt"; // Ruta relativa desde el directorio raíz del proyecto
+
+    List<String> lineas;
+
+    /**
+     * Constructor para crear una instancia de Cuentas.
+     * @param nombre Nombre del titular de la cuenta.
+     * @param Ap Apellido paterno del titular de la cuenta.
+     * @param Am Apellido materno del titular de la cuenta.
+     * @param ci Número de cédula de identidad del titular de la cuenta.
+     * @param dia Día de nacimiento del titular de la cuenta.
+     * @param mes Mes de nacimiento del titular de la cuenta.
+     * @param anio Año de nacimiento del titular de la cuenta.
+     * @param tipoCuenta Tipo de cuenta (por ejemplo, "ahorros" o "cheques").
+     */
+    public Cuentas(String nombre, String Ap, String Am, int ci, int dia, int mes, int anio, String tipoCuenta) {
+        // Implementación del constructor
+    }
+
+    // Otros constructores y métodos
+
+    /**
+     * Lee el archivo de usuarios y verifica si existe una cuenta asociada al CI y tipo de cuenta proporcionados.
+     * @return true si la cuenta existe, false de lo contrario.
+     */
+    public boolean leerCuentasCrear() {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Verifica si un usuario y un PIN coinciden con alguna cuenta existente.
+     * @param usuario El nombre de usuario.
+     * @param pin El PIN asociado al usuario.
+     * @return true si las credenciales son válidas, false de lo contrario.
+     */
+    public boolean comprobarUsuario(String usuario, int pin) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Obtiene el saldo de una cuenta específica.
+     * @param nCuenta El número de cuenta.
+     * @param tipoCuenta El tipo de cuenta.
+     * @return El saldo de la cuenta en formato de cadena de caracteres.
+     */
+    public String getSaldo(String nCuenta, String tipoCuenta) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Transfiere fondos desde una cuenta a otra.
+     * @param monto El monto a transferir.
+     * @param nCuenta El número de cuenta de origen.
+     */
+    public void transferir(int monto, String nCuenta) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Obtiene el tipo de cuenta asociado a un número de cuenta dado.
+     * @param nCuentaE El número de cuenta.
+     * @return El tipo de cuenta en formato de cadena de caracteres.
+     */
+    public String tipoCuenta(String nCuentaE) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Verifica si una cuenta existe.
+     * @param nCuentaE El número de cuenta a verificar.
+     * @return true si la cuenta existe, false de lo contrario.
+     */
+    public boolean existeCuenta(String nCuentaE) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+    /**
+     * Transfiere fondos a la cuenta receptora.
+     * @param monto El monto a transferir.
+     * @param nCuentaR El número de cuenta del receptor.
+     */
+    public void transferirReceptor(double monto, String nCuentaR) {
+        // Implementación del método
+    }
+
+    // Otros métodos y constructores
+
+}
+```
+

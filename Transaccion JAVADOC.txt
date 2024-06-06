@@ -1,0 +1,116 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cajero;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Clase que representa una transacción en un sistema de cajero automático.
+ * Se encarga de leer y escribir transacciones en un archivo de texto.
+ * 
+ * @author ETHAN PIERCE
+ */
+public class Transaccion {
+
+    final String rutaArchivo = "transacciones.txt";
+    List<String> lineas;
+
+    /**
+     * Constructor de la clase Transaccion.
+     * Inicializa la lista de líneas leyendo el archivo de transacciones.
+     */
+    public Transaccion() {
+        lineas = leerArchivo(rutaArchivo);
+    }
+
+    /**
+     * Lee las líneas de un archivo y las devuelve en una lista.
+     * 
+     * @param rutaArchivo La ruta del archivo a leer.
+     * @return Una lista de líneas leídas del archivo.
+     * @throws IOException Si ocurre un error al leer el archivo.
+     */
+    public List<String> leerArchivo(String rutaArchivo) {
+        List<String> lineas = new ArrayList<>();
+        try (BufferedReader lector = new BufferedReader(new FileReader(rutaArchivo))) {
+            String linea;
+            while ((linea = lector.readLine()) != null) {
+                lineas.add(linea);
+            }
+        } catch (IOException e) {
+            System.err.println("Error al leer el archivo: " + e.getMessage());
+        }
+        return lineas;
+    }
+
+    /**
+     * Crea una nueva transacción y la escribe en el archivo de transacciones.
+     * 
+     * @param nCuenta          Número de cuenta desde la cual se realiza la transacción.
+     * @param tipoTransaccion  Tipo de transacción (e.g., "Transferencia").
+     * @param monto            Monto de la transacción.
+     * @param divisa           Divisa de la transacción.
+     * @param nCuentaR         Número de cuenta de destino.
+     * @throws IOException Si ocurre un error al escribir en el archivo.
+     */
+    public void crearTransaccion(String nCuenta, String tipoTransaccion, double monto, String divisa, String nCuentaR) {
+        if(tipoTransaccion.equals("Transfirio")){
+            Cuentas c = new Cuentas();
+            divisa = c.tipoCuenta(nCuentaR);
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+                writer.write("Desde: "+nCuenta + "," + tipoTransaccion + "," + monto + divisa + ", A: " + nCuentaR + "\n");
+                writer.write("A: "+nCuentaR + "," + "Te " +tipoTransaccion + "," + monto+ " " + divisa + ", Desde: " + nCuenta + "\n");
+                System.out.println("Datos agregados exitosamente.");
+            } catch (IOException e) {
+                System.err.println("Error al escribir en el archivo: " + e.getMessage());
+            }
+        } else {
+            try (BufferedWriter writer = new BufferedWriter(new FileWriter(rutaArchivo, true))) {
+                writer.write("Desde: "+nCuenta + "," + tipoTransaccion + "," + monto + divisa + ", A: " + nCuentaR + "\n");
+                System.out.println("Datos agregados exitosamente.");
+            } catch (IOException e) {
+                System.err.println("Error al escribir en el archivo: " + e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * Lee y devuelve las transacciones asociadas a un número de cuenta.
+     * 
+     * @param nCuenta Número de cuenta del cual se desean leer las transacciones.
+     * @return Un StringBuilder con las transacciones relacionadas a la cuenta.
+     */
+    public StringBuilder leerTransaccionCuenta(String nCuenta) {
+        StringBuilder transacciones = new StringBuilder();
+        for (String linea : lineas) {
+            String[] partes = linea.split(",");
+            String emisor = partes[0];
+            if (emisor.equals("Desde: "+nCuenta)|| emisor.equals("A: "+nCuenta)) {
+                // Construir la cadena de transacciones concatenando cada línea
+                transacciones.append(linea).append("\n");
+            }
+        }
+        return transacciones;
+    }
+}
+UN EJEMPLO DE COMO USAR LA CLASE TRANSACCION 	
+public class Main {
+    public static void main(String[] args) {
+        Transaccion transaccion = new Transaccion();
+        
+        // Crear una nueva transacción
+        transaccion.crearTransaccion("123456", "Deposito", 500.0, "USD", "789012");
+        
+        // Leer transacciones de una cuenta específica
+        StringBuilder transacciones = transaccion.leerTransaccionCuenta("123456");
+        System.out.println(transacciones.toString());
+    }
+}

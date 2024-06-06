@@ -1,0 +1,55 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package cajero;
+
+/**
+ * Clase que representa la validación de un usuario en un sistema de cajero automático.
+ * Se encarga de comprobar la existencia de un usuario y su contraseña.
+ * 
+ * @autor ETHAN PIERCE
+ */
+public class Validacion {
+    String usuario;
+    int password;
+    Cuentas c = new Cuentas();
+
+    /**
+     * Constructor de la clase Validacion.
+     * Inicializa el usuario y la contraseña proporcionados.
+     * 
+     * @param usuario  Nombre de usuario a validar.
+     * @param password Contraseña del usuario a validar.
+     */
+    public Validacion(String usuario, int password) {
+        this.usuario = usuario;
+        this.password = password;
+    }
+    
+    /**
+     * Comprueba si el usuario y la contraseña existen en el sistema.
+     * 
+     * @return true si el usuario y la contraseña existen, false en caso contrario.
+     */
+    public boolean existe() {
+        return c.comprobarUsuario(this.usuario, this.password);
+    }
+}
+EJEMPLO DE COMO USAR LA CLASE VALIDACION
+public class Main {
+    public static void main(String[] args) {
+        // Crear una instancia de Validacion con un usuario y contraseña
+        Validacion validacion = new Validacion("usuario123", 123456);
+        
+        // Comprobar si el usuario existe
+        boolean usuarioExiste = validacion.existe();
+        
+        // Imprimir el resultado de la validación
+        if (usuarioExiste) {
+            System.out.println("El usuario y la contraseña son válidos.");
+        } else {
+            System.out.println("El usuario o la contraseña no son válidos.");
+        }
+    }
+}
