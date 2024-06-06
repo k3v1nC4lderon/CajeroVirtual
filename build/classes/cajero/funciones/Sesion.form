@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" max="-2" attributes="0"/>
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanel1">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="bTransacciones" max="32767" attributes="0"/>
+                      <Component id="bMoneda" pref="160" max="32767" attributes="0"/>
+                      <Component id="bDepositar" alignment="1" max="32767" attributes="0"/>
+                      <Component id="bTransferir" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="403" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="bRetirar" alignment="0" pref="146" max="32767" attributes="0"/>
+                      <Component id="bSaldo" max="32767" attributes="0"/>
+                      <Component id="bSalir" alignment="1" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="270" max="-2" attributes="0"/>
+                      <Component id="lnCuenta" pref="203" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="248" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="bDepositar" min="-2" pref="44" max="-2" attributes="0"/>
+                      <Component id="bRetirar" min="-2" pref="50" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="bSaldo" pref="54" max="32767" attributes="0"/>
+                      <Component id="bTransferir" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="bTransacciones" min="-2" pref="60" max="-2" attributes="0"/>
+                  <EmptySpace pref="133" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="bMoneda" alignment="3" min="-2" pref="45" max="-2" attributes="0"/>
+                      <Component id="bSalir" alignment="3" min="-2" pref="46" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="lnCuenta" min="-2" pref="23" max="-2" attributes="0"/>
+                      <EmptySpace pref="333" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JButton" name="bMoneda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Cambiar Moneda"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bMonedaActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bMoneda.setForeground(Color.WHITE);&#xa;bMoneda.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bMoneda.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bSalir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Salir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSalirActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bSalir.setForeground(Color.WHITE);&#xa;bSalir.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bSalir.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bTransacciones">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Transacciones"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bTransaccionesActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bTransacciones.setForeground(Color.WHITE);&#xa;bTransacciones.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bTransacciones.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bTransferir">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Transferir"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bTransferirActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bTransferir.setForeground(Color.WHITE);&#xa;bTransferir.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bTransferir.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bSaldo">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Saldo"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSaldoActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bSaldo.setForeground(Color.WHITE);&#xa;bSaldo.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bSaldo.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bRetirar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Retirar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bRetirarActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bRetirar.setForeground(Color.WHITE);&#xa;bRetirar.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bRetirar.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="bDepositar">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Depositar"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bDepositarActionPerformed"/>
+          </Events>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_ListenersCodePost" type="java.lang.String" value="bDepositar.setForeground(Color.WHITE);&#xa;bDepositar.setFont(new Font(&quot;Helvetica&quot;, Font.BOLD, 20));&#xa;bDepositar.setBackground(Color.getHSBColor(0.0f, 0.0f, 0.7f));"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JLabel" name="lnCuenta">
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
